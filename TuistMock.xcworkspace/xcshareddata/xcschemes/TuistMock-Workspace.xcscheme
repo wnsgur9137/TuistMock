@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "1010"
+   version = "1.3">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4899A159C6860CCE971C9452"
+               BuildableName = "Board.app"
+               BlueprintName = "Board"
+               ReferencedContainer = "container:Projects/Board/Board.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AC41401DBD4438D1F1CDBDD6"
+               BuildableName = "BoardUITests.xctest"
+               BlueprintName = "BoardUITests"
+               ReferencedContainer = "container:Projects/Board/Board.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "82D27CAAB4AB50159DF0270C"
+               BuildableName = "BoardUnitTest.xctest"
+               BlueprintName = "BoardUnitTest"
+               ReferencedContainer = "container:Projects/Board/Board.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "52E844066D197E3B81FA748F"
+               BuildableName = "Home.app"
+               BlueprintName = "Home"
+               ReferencedContainer = "container:Projects/Home/Home.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "241D8492597C25195510B444"
+               BuildableName = "HomeUITests.xctest"
+               BlueprintName = "HomeUITests"
+               ReferencedContainer = "container:Projects/Home/Home.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AB567E31D8DD522F5F55F94A"
+               BuildableName = "HomeUnitTest.xctest"
+               BlueprintName = "HomeUnitTest"
+               ReferencedContainer = "container:Projects/Home/Home.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6DD2D9BE112D41AA7050E221"
+               BuildableName = "MyPage.app"
+               BlueprintName = "MyPage"
+               ReferencedContainer = "container:Projects/MyPage/MyPage.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7022EA2F0297F8C34C68A35D"
+               BuildableName = "MyPageUITests.xctest"
+               BlueprintName = "MyPageUITests"
+               ReferencedContainer = "container:Projects/MyPage/MyPage.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18194C9BD70511006CC42DB2"
+               BuildableName = "MyPageUnitTest.xctest"
+               BlueprintName = "MyPageUnitTest"
+               ReferencedContainer = "container:Projects/MyPage/MyPage.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "DEBUG"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AC41401DBD4438D1F1CDBDD6"
+               BuildableName = "BoardUITests.xctest"
+               BlueprintName = "BoardUITests"
+               ReferencedContainer = "container:Projects/Board/Board.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "82D27CAAB4AB50159DF0270C"
+               BuildableName = "BoardUnitTest.xctest"
+               BlueprintName = "BoardUnitTest"
+               ReferencedContainer = "container:Projects/Board/Board.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "241D8492597C25195510B444"
+               BuildableName = "HomeUITests.xctest"
+               BlueprintName = "HomeUITests"
+               ReferencedContainer = "container:Projects/Home/Home.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AB567E31D8DD522F5F55F94A"
+               BuildableName = "HomeUnitTest.xctest"
+               BlueprintName = "HomeUnitTest"
+               ReferencedContainer = "container:Projects/Home/Home.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7022EA2F0297F8C34C68A35D"
+               BuildableName = "MyPageUITests.xctest"
+               BlueprintName = "MyPageUITests"
+               ReferencedContainer = "container:Projects/MyPage/MyPage.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18194C9BD70511006CC42DB2"
+               BuildableName = "MyPageUnitTest.xctest"
+               BlueprintName = "MyPageUnitTest"
+               ReferencedContainer = "container:Projects/MyPage/MyPage.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "DEBUG"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4899A159C6860CCE971C9452"
+            BuildableName = "Board.app"
+            BlueprintName = "Board"
+            ReferencedContainer = "container:Projects/Board/Board.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "RELEASE"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4899A159C6860CCE971C9452"
+            BuildableName = "Board.app"
+            BlueprintName = "Board"
+            ReferencedContainer = "container:Projects/Board/Board.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "DEBUG">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "RELEASE"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>
