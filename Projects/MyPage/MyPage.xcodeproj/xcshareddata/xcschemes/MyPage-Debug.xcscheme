@@ -6,20 +6,6 @@
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6DD2D9BE112D41AA7050E221"
-               BuildableName = "MyPage.app"
-               BlueprintName = "MyPage"
-               ReferencedContainer = "container:MyPage.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -31,49 +17,4 @@
       <Testables>
       </Testables>
    </TestAction>
-   <LaunchAction
-      buildConfiguration = "DEBUG"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      launchStyle = "0"
-      useCustomWorkingDirectory = "NO"
-      ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "YES"
-      debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6DD2D9BE112D41AA7050E221"
-            BuildableName = "MyPage.app"
-            BlueprintName = "MyPage"
-            ReferencedContainer = "container:MyPage.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-   </LaunchAction>
-   <ProfileAction
-      buildConfiguration = "RELEASE"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = ""
-      useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6DD2D9BE112D41AA7050E221"
-            BuildableName = "MyPage.app"
-            BlueprintName = "MyPage"
-            ReferencedContainer = "container:MyPage.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-   </ProfileAction>
-   <AnalyzeAction
-      buildConfiguration = "DEBUG">
-   </AnalyzeAction>
-   <ArchiveAction
-      buildConfiguration = "RELEASE"
-      revealArchiveInOrganizer = "YES">
-   </ArchiveAction>
 </Scheme>

@@ -6,6 +6,18 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		12D66E7C36CE272D2E9EF33C /* TuistBundle+HomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61315C6978751F1DD95926 /* TuistBundle+HomeUITests.swift */; };
+		237D6BE306F42C1AD9FD36FF /* SceneDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 56E7334FB2497BD35AF59ADD /* SceneDelegate.swift */; };
+		2947DEDFFB4362B73343EA95 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = A237B5E9422770CC21400AD2 /* AppDelegate.swift */; };
+		3AAE695C048B24C828470AF5 /* SceneDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 56E7334FB2497BD35AF59ADD /* SceneDelegate.swift */; };
+		910EB185F843011C7F9A9B5F /* TuistBundle+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA691B25CAE8B0E1E65FD98 /* TuistBundle+Home.swift */; };
+		9BE71FB7BA22115E3EFEF7CE /* TuistBundle+HomeUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1201AC54EAC490AA7104652A /* TuistBundle+HomeUnitTest.swift */; };
+		A427EA00B70A70BB123968E0 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = A237B5E9422770CC21400AD2 /* AppDelegate.swift */; };
+		B80E9861C0C8B219459AB709 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = A237B5E9422770CC21400AD2 /* AppDelegate.swift */; };
+		FEEA2828D7EB847A66696EDF /* SceneDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 56E7334FB2497BD35AF59ADD /* SceneDelegate.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		AF122A544F72C6A9EF869913 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -57,11 +69,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1201AC54EAC490AA7104652A /* TuistBundle+HomeUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+HomeUnitTest.swift"; sourceTree = "<group>"; };
+		14BD0BEE0DCEF10755D0C9BF /* TuistMock-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "TuistMock-Release.xcconfig"; sourceTree = "<group>"; };
 		44232A01BED376B82C2F9F94 /* HomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F1196A513FD820ADCF87AB /* Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Home.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56E7334FB2497BD35AF59ADD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		61EC700930D1096A1F12C0D7 /* Home-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Home-Info.plist"; sourceTree = "<group>"; };
 		66F994143242C34F6B385F69 /* HomeUnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "HomeUnitTest-Info.plist"; sourceTree = "<group>"; };
 		7D0EC913A7D4CB79A5FA1158 /* HomeUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FA691B25CAE8B0E1E65FD98 /* TuistBundle+Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+Home.swift"; sourceTree = "<group>"; };
+		A237B5E9422770CC21400AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB61315C6978751F1DD95926 /* TuistBundle+HomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+HomeUITests.swift"; sourceTree = "<group>"; };
 		F98B9A5C91B83C904328AB30 /* HomeUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "HomeUITests-Info.plist"; sourceTree = "<group>"; };
 		FF5880002535DA927245701D /* TuistMock-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "TuistMock-Debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,10 +119,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6CD65BC487D9998FB8FEDE3F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A237B5E9422770CC21400AD2 /* AppDelegate.swift */,
+				56E7334FB2497BD35AF59ADD /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		70BB71A4919E9DCCA3DEA54A /* Derived */ = {
 			isa = PBXGroup;
 			children = (
 				C7DAD5517A15CCB12559D52C /* InfoPlists */,
+				826AD2047568D60C79FD69F5 /* Sources */,
 			);
 			path = Derived;
 			sourceTree = "<group>";
@@ -118,11 +146,22 @@
 			);
 			sourceTree = "<group>";
 		};
+		826AD2047568D60C79FD69F5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7FA691B25CAE8B0E1E65FD98 /* TuistBundle+Home.swift */,
+				BB61315C6978751F1DD95926 /* TuistBundle+HomeUITests.swift */,
+				1201AC54EAC490AA7104652A /* TuistBundle+HomeUnitTest.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		A0406DFCF5F3BCA58AF39988 /* Project */ = {
 			isa = PBXGroup;
 			children = (
 				F85BCB7B5F84F1FBD96269E6 /* Configurations */,
 				70BB71A4919E9DCCA3DEA54A /* Derived */,
+				6CD65BC487D9998FB8FEDE3F /* Resources */,
 			);
 			name = Project;
 			sourceTree = "<group>";
@@ -148,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				FF5880002535DA927245701D /* TuistMock-Debug.xcconfig */,
+				14BD0BEE0DCEF10755D0C9BF /* TuistMock-Release.xcconfig */,
 			);
 			name = Configurations;
 			path = ../../Configurations;
@@ -254,6 +294,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A427EA00B70A70BB123968E0 /* AppDelegate.swift in Resources */,
+				3AAE695C048B24C828470AF5 /* SceneDelegate.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +303,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2947DEDFFB4362B73343EA95 /* AppDelegate.swift in Resources */,
+				237D6BE306F42C1AD9FD36FF /* SceneDelegate.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B80E9861C0C8B219459AB709 /* AppDelegate.swift in Resources */,
+				FEEA2828D7EB847A66696EDF /* SceneDelegate.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12D66E7C36CE272D2E9EF33C /* TuistBundle+HomeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910EB185F843011C7F9A9B5F /* TuistBundle+Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE71FB7BA22115E3EFEF7CE /* TuistBundle+HomeUnitTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +378,7 @@
 				PRODUCT_NAME = Home;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
@@ -353,7 +402,7 @@
 				PRODUCT_NAME = HomeUITests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
@@ -426,7 +475,7 @@
 		};
 		96CDFED4A91046EA3FD2E3A9 /* RELEASE */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF5880002535DA927245701D /* TuistMock-Debug.xcconfig */;
+			baseConfigurationReference = 14BD0BEE0DCEF10755D0C9BF /* TuistMock-Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -440,7 +489,7 @@
 				PRODUCT_NAME = Home;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -464,7 +513,7 @@
 				PRODUCT_NAME = HomeUnitTest;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
@@ -478,7 +527,7 @@
 		};
 		9CDF91426446500245A8F2FD /* RELEASE */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF5880002535DA927245701D /* TuistMock-Debug.xcconfig */;
+			baseConfigurationReference = 14BD0BEE0DCEF10755D0C9BF /* TuistMock-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -545,7 +594,7 @@
 				PRODUCT_NAME = HomeUnitTest;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -570,7 +619,7 @@
 				PRODUCT_NAME = HomeUITests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

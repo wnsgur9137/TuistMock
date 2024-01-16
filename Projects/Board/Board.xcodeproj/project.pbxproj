@@ -6,6 +6,18 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		25A8C68DB9BE6B985B25DF8A /* TuistBundle+BoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51D93D0E6534C59FC9E2EE /* TuistBundle+BoardUITests.swift */; };
+		403BBFE704EAE251A918E225 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 29E223ACE7380F2543BD6196 /* AppDelegate.swift */; };
+		61F42600D55D9A2EA5D63F32 /* TuistBundle+BoardUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C64B53C1589DE2F262449F /* TuistBundle+BoardUnitTest.swift */; };
+		668B8D797AD63519626D9C0D /* SceneDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = B5ED65576882368F7D049E63 /* SceneDelegate.swift */; };
+		66DDD25E07591A2DCEF1CF97 /* SceneDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = B5ED65576882368F7D049E63 /* SceneDelegate.swift */; };
+		7AB1A5F01178BC85E1B5CF27 /* TuistBundle+Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5996554D7D6A04AA94EBF51 /* TuistBundle+Board.swift */; };
+		989D9E370BC6FF504AE20407 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 29E223ACE7380F2543BD6196 /* AppDelegate.swift */; };
+		CAB4C4164CC4594339AFCE51 /* AppDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = 29E223ACE7380F2543BD6196 /* AppDelegate.swift */; };
+		EE1A33DD3E248399AD9271E1 /* SceneDelegate.swift in Resources */ = {isa = PBXBuildFile; fileRef = B5ED65576882368F7D049E63 /* SceneDelegate.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		98F2C7522B630C8C5E9225B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -58,12 +70,18 @@
 
 /* Begin PBXFileReference section */
 		085FFDB5AF840054328C87B8 /* BoardUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoardUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E223ACE7380F2543BD6196 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37AC64445D01F500B8711C54 /* BoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5C5F00DE59552080D7BBB3 /* BoardUnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BoardUnitTest-Info.plist"; sourceTree = "<group>"; };
+		49CE4745276D4F65144E1CEB /* TuistMock-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "TuistMock-Release.xcconfig"; sourceTree = "<group>"; };
 		659971352553BDE60C22C1C3 /* Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Board.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C51D93D0E6534C59FC9E2EE /* TuistBundle+BoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+BoardUITests.swift"; sourceTree = "<group>"; };
 		81A3E7B2999EA85E6E63820F /* Board-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Board-Info.plist"; sourceTree = "<group>"; };
 		9C56F6E4DF54F86AEBF0C027 /* BoardUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BoardUITests-Info.plist"; sourceTree = "<group>"; };
+		B5ED65576882368F7D049E63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C5996554D7D6A04AA94EBF51 /* TuistBundle+Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+Board.swift"; sourceTree = "<group>"; };
 		C5BCDEE7DE633FF67ADA9D85 /* TuistMock-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "TuistMock-Debug.xcconfig"; sourceTree = "<group>"; };
+		F3C64B53C1589DE2F262449F /* TuistBundle+BoardUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+BoardUnitTest.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				3C91ED37FF75593266B18EB1 /* InfoPlists */,
+				6FE57FF78ED49079000FEE1C /* Sources */,
 			);
 			path = Derived;
 			sourceTree = "<group>";
@@ -116,6 +135,16 @@
 			path = InfoPlists;
 			sourceTree = "<group>";
 		};
+		6FE57FF78ED49079000FEE1C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C5996554D7D6A04AA94EBF51 /* TuistBundle+Board.swift */,
+				7C51D93D0E6534C59FC9E2EE /* TuistBundle+BoardUITests.swift */,
+				F3C64B53C1589DE2F262449F /* TuistBundle+BoardUnitTest.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		7D2720C95E91C13B2C43DDED /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +153,15 @@
 				085FFDB5AF840054328C87B8 /* BoardUnitTest.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		891714B8EFE3D6C374F4BD8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29E223ACE7380F2543BD6196 /* AppDelegate.swift */,
+				B5ED65576882368F7D049E63 /* SceneDelegate.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		CCD600C439D186CF1CE490E1 = {
@@ -139,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				C5BCDEE7DE633FF67ADA9D85 /* TuistMock-Debug.xcconfig */,
+				49CE4745276D4F65144E1CEB /* TuistMock-Release.xcconfig */,
 			);
 			name = Configurations;
 			path = ../../Configurations;
@@ -149,6 +188,7 @@
 			children = (
 				F6C8904CB6EAA650926B5EBF /* Configurations */,
 				1E07A78111F8FDFA7E167C46 /* Derived */,
+				891714B8EFE3D6C374F4BD8D /* Resources */,
 			);
 			name = Project;
 			sourceTree = "<group>";
@@ -254,6 +294,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				989D9E370BC6FF504AE20407 /* AppDelegate.swift in Resources */,
+				EE1A33DD3E248399AD9271E1 /* SceneDelegate.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +303,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAB4C4164CC4594339AFCE51 /* AppDelegate.swift in Resources */,
+				66DDD25E07591A2DCEF1CF97 /* SceneDelegate.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				403BBFE704EAE251A918E225 /* AppDelegate.swift in Resources */,
+				668B8D797AD63519626D9C0D /* SceneDelegate.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61F42600D55D9A2EA5D63F32 /* TuistBundle+BoardUnitTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A8C68DB9BE6B985B25DF8A /* TuistBundle+BoardUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB1A5F01178BC85E1B5CF27 /* TuistBundle+Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +376,7 @@
 				PRODUCT_NAME = BoardUITests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
@@ -354,7 +403,7 @@
 				PRODUCT_NAME = Board;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
@@ -366,7 +415,7 @@
 		};
 		51BF8ABD9906E7F8CCDE9936 /* RELEASE */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5BCDEE7DE633FF67ADA9D85 /* TuistMock-Debug.xcconfig */;
+			baseConfigurationReference = 49CE4745276D4F65144E1CEB /* TuistMock-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -420,7 +469,7 @@
 		};
 		6A4E4A82DD193D403D4F8C20 /* RELEASE */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5BCDEE7DE633FF67ADA9D85 /* TuistMock-Debug.xcconfig */;
+			baseConfigurationReference = 49CE4745276D4F65144E1CEB /* TuistMock-Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -434,7 +483,7 @@
 				PRODUCT_NAME = Board;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -457,7 +506,7 @@
 				PRODUCT_NAME = BoardUITests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -482,7 +531,7 @@
 				PRODUCT_NAME = BoardUnitTest;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -568,7 +617,7 @@
 				PRODUCT_NAME = BoardUnitTest;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
