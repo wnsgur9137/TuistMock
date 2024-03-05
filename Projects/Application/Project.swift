@@ -31,6 +31,7 @@ let defaultInfoPlist: [String: Plist.Value] = [
     ]
 ]
 
+// MARK: - Settings
 let settings: Settings = .settings(
     base: [
         "CODE_SIGN_IDENTITY": "",
@@ -43,10 +44,12 @@ let settings: Settings = .settings(
     ]
 )
 
+// MARK: - Scripts
 let scripts: [TargetScript] = [
 
 ]
 
+// MARK: - Targets
 let targets: [Target] = [
     Target(
         name: projectName,
@@ -60,7 +63,8 @@ let targets: [Target] = [
         resources: .resources,
         scripts: scripts,
         dependencies: [
-            
+//            .Project.Feature.Features
+            .Project.TabBar
         ],
         settings: .settings(
             configurations: [
@@ -94,7 +98,8 @@ let targets: [Target] = [
         resources: ["Resources/**"],
         scripts: scripts,
         dependencies: [
-            
+//            .Project.Feature.Features
+            .Project.TabBar
         ],
         settings: .settings(
             configurations: [
@@ -149,6 +154,7 @@ let targets: [Target] = [
     )
 ]
 
+// MARK: - Schemes
 let schemes: [Scheme] = [
     Scheme(
         name: "\(projectName)_DevApp-Prod",
@@ -176,6 +182,7 @@ let schemes: [Scheme] = [
     )
 ]
 
+// MARK: - Project
 let project: Project = .init(
     name: "Application",
     organizationName: organizationName,
