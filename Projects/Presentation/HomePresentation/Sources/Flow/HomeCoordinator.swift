@@ -9,7 +9,6 @@
 import UIKit
 
 import Common
-import HomeDomain
 
 public protocol HomeCoordinatorDependencies {
     func makeHomeViewController(flowAction: HomeFlowAction) -> HomeViewController

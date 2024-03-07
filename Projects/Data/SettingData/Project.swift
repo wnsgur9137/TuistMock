@@ -12,6 +12,7 @@ import UtilityPlugin
 let project: Project = .staticFramework(
     name: "SettingData",
     dependencies: [
+        .Project.Feature.Data.Base,
         .Project.Feature.Domain.Setting
     ]
 )

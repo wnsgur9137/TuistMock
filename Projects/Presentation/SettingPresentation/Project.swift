@@ -12,7 +12,6 @@ import UtilityPlugin
 let project: Project = .staticFramework(
     name: "SettingPresentation",
     dependencies: [
-        .Project.Common,
-        .Project.Feature.Domain.Setting
+        .Project.Feature.Presentation.Base
     ]
 )

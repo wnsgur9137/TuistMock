@@ -12,9 +12,6 @@ import UtilityPlugin
 let project: Project = .staticFramework(
     name: "HomePresentation",
     dependencies: [
-        .Project.Common,
-        .Project.LibraryManager.Reactive,
-        .Project.LibraryManager.Layout,
-        .Project.LibraryManager.UI
+        .Project.Feature.Presentation.Base
     ]
 )

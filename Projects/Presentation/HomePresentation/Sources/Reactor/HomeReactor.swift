@@ -9,8 +9,9 @@
 import Foundation
 import ReactorKit
 import RxSwift
-import RxCocoa
-import HomeDomain
+//import RxCocoa
+
+//import BasePresentation
 
 public struct HomeFlowAction {
     
@@ -22,11 +23,11 @@ public final class HomeReactor: Reactor {
     }
     
     public enum Mutation {
-        case didloadTestData(TestData)
+        case didloadTestData(TestDataViewModel)
     }
     
     public struct State {
-        var testData: TestData? = nil
+        var testData: TestDataViewModel? = nil
     }
     
     public var initialState = State()
@@ -40,7 +41,7 @@ public final class HomeReactor: Reactor {
         self.flowAction = flowAction
     }
     
-    private func loadTestData() -> Observable<TestData> {
+    private func loadTestData() -> Observable<TestDataViewModel> {
         return useCase.executeTestData().asObservable()
     }
 }
@@ -61,5 +62,17 @@ extension HomeReactor {
             state.testData = testData
         }
         return state
+    }
+}
+
+public struct TestDataViewModel {
+    let title: String
+    let content: String
+    let id: Int
+    
+    public init(title: String, content: String, id: Int) {
+        self.title = title
+        self.content = content
+        self.id = id
     }
 }

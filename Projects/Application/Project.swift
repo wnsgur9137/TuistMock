@@ -63,8 +63,8 @@ let targets: [Target] = [
         resources: .resources,
         scripts: scripts,
         dependencies: [
-//            .Project.Feature.Features
-            .Project.TabBar
+            .Project.TabBar,
+            .Project.InjectManager.Repository
         ],
         settings: .settings(
             configurations: [
@@ -98,8 +98,8 @@ let targets: [Target] = [
         resources: ["Resources/**"],
         scripts: scripts,
         dependencies: [
-//            .Project.Feature.Features
-            .Project.TabBar
+            .Project.TabBar,
+            .Project.InjectManager.Repository
         ],
         settings: .settings(
             configurations: [

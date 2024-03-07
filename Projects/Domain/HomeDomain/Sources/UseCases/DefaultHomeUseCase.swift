@@ -9,9 +9,7 @@
 import Foundation
 import RxSwift
 
-public protocol HomeUseCase {
-    func executeTestData() -> Single<TestData>
-}
+import HomePresentation
 
 public final class DefaultHomeUseCase: HomeUseCase {
     private let homeRepository: HomeRepository
@@ -22,7 +20,9 @@ public final class DefaultHomeUseCase: HomeUseCase {
 }
 
 extension DefaultHomeUseCase {
-    public func executeTestData() -> Single<TestData> {
-        return homeRepository.executeTestData()
+    public func executeTestData() -> Single<TestDataViewModel> {
+        return homeRepository.executeTestData().map { testData in
+            return testData.toViewModel()
+        }
     }
 }

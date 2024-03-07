@@ -12,7 +12,6 @@ import UtilityPlugin
 let project: Project = .staticFramework(
     name: "SearchPresentation",
     dependencies: [
-        .Project.Common,
-        .Project.Feature.Domain.Search
+        .Project.Feature.Presentation.Base
     ]
 )

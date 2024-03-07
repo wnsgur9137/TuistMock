@@ -10,20 +10,24 @@ import ProjectDescription
 
 public enum ProjectLayer: String {
     case Application
+    case InjectManager
     case Feature
     case Presentation
     case Domain
     case Data
+    case Infrastructure
     case LibraryManager
 }
 
 extension TargetDependency {
     public struct Project {
+        public struct InjectManager { }
         public struct Feature {
             public struct Presentation { }
             public struct Domain { }
             public struct Data { }
         }
+        public struct Infrastructure { }
         public struct LibraryManager { }
     }
 }
@@ -32,6 +36,11 @@ extension TargetDependency {
 public extension TargetDependency.Project {
     static let TabBar: TargetDependency = .project(target: "TabBar", path: .relativeToProject(name: "TabBar"))
     static let Common: TargetDependency = .project(target: "Common", path: .relativeToProject(name: "Common"))
+}
+
+// MARK: - InjectManager
+public extension TargetDependency.Project.InjectManager {
+    static let Repository: TargetDependency = .project(layer: .InjectManager, name: "RepositoryInjectManager")
 }
 
 // MARK: - Feature
@@ -44,6 +53,7 @@ public extension TargetDependency.Project.Feature {
 
 // MARK: - Presentation
 public extension TargetDependency.Project.Feature.Presentation {
+    static let Base: TargetDependency = .project(layer: .Presentation, name: "BasePresentation")
     static let Home: TargetDependency = .project(layer: .Presentation, name: "HomePresentation")
     static let Search: TargetDependency = .project(layer: .Presentation, name: "SearchPresentation")
     static let Setting: TargetDependency = .project(layer: .Presentation, name: "SettingPresentation")
@@ -58,9 +68,16 @@ public extension TargetDependency.Project.Feature.Domain {
 
 // MARK: - Data
 public extension TargetDependency.Project.Feature.Data {
+    static let Base: TargetDependency = .project(layer: .Data, name: "BaseData")
     static let Home: TargetDependency = .project(layer: .Data, name: "HomeData")
     static let Search: TargetDependency = .project(layer: .Data, name: "SearchData")
     static let Setting: TargetDependency = .project(layer: .Data, name: "SettingData")
+}
+
+// MARK: - InfraStructure
+public extension TargetDependency.Project.Infrastructure {
+    static let Network: TargetDependency = .project(layer: .Infrastructure, name: "Network")
+    static let Service: TargetDependency = .project(layer: .Infrastructure, name: "Service")
 }
 
 // MARK: - Library

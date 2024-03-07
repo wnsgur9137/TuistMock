@@ -12,5 +12,6 @@ import UtilityPlugin
 let project: Project = .staticFramework(
     name: "SettingDomain",
     dependencies: [
+        .Project.Feature.Presentation.Setting
     ]
 )

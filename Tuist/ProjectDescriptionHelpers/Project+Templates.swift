@@ -59,14 +59,14 @@ extension Project {
                                infoPlist: [String: Plist.Value] = [:],
                                hasDemoApp: Bool = false) -> Project {
         let settings: Settings = .settings(base: ["CODE_SIGN_IDENTITY": "",
-                                                  "CODE_SIGNING_REGUIRED": "NG"],
+                                                  "CODE_SIGNING_REGUIRED": "NO"],
                                            configurations: [
                                             .debug(name: .DEV,
                                                    settings: [
                                                     "GCC_PREPROCESSOR_DEFINITIONS": [
                                                         "DEBUG=1",
                                                         "OTHER_MACRO=1",
-                                                        "FLEXLAOUT_SWIFT_PACKAGE=1"
+                                                        "FLEXLAYOUT_SWIFT_PACKAGE=1"
                                                     ]
                                                    ],
                                                    xcconfig: .relativeToXCConfig(.DEV)
@@ -76,7 +76,7 @@ extension Project {
                                                     "GCC_PREPROCESSOR_DEFINITIONS": [
                                                         "DEBUG=1",
                                                         "OTHER_MACRO=1",
-                                                        "FLEXLAOUT_SWIFT_PACKAGE=1"
+                                                        "FLEXLAYOUT_SWIFT_PACKAGE=1"
                                                     ]
                                                    ],
                                                    xcconfig: .relativeToXCConfig(.TEST)
@@ -84,9 +84,9 @@ extension Project {
                                             .release(name: .PROD,
                                                    settings: [
                                                     "GCC_PREPROCESSOR_DEFINITIONS": [
-                                                        "DEBUG=1",
+                                                        "RELEASE=1",
                                                         "OTHER_MACRO=1",
-                                                        "FLEXLAOUT_SWIFT_PACKAGE=1"
+                                                        "FLEXLAYOUT_SWIFT_PACKAGE=1"
                                                     ]
                                                    ],
                                                    xcconfig: .relativeToXCConfig(.PROD)

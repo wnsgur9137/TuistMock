@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import HomePresentation
 
 public struct TestData {
     let title: String
@@ -17,5 +18,11 @@ public struct TestData {
         self.title = title
         self.content = content
         self.id = id
+    }
+}
+
+extension TestData {
+    func toViewModel() -> TestDataViewModel {
+        return .init(title: self.title, content: self.content, id: self.id)
     }
 }
