@@ -11,6 +11,12 @@ import UtilityPlugin
 
 let project: Project = .framework(
     name: "NetworkLibraries",
+    settings: [
+        "OTHER_LDFLAGS": [
+            "$(inherited)",
+            "-all_load"
+        ]
+    ],
     packages: Package.Network.All,
     dependencies: TargetDependency.SwiftPM.Network.All
 )

@@ -71,7 +71,8 @@ let targets: [Target] = [
                 .debug(
                     name: .DEV,
                     settings: [
-                        "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIconDevServer"
+                        "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIconDevServer",
+                        "GCC_PREPROCESSOR_DEFINITIONS": ["FLEXLAYOUT_SWIFT_PACKAGE=1"]
                     ],
                     xcconfig: XCConfig.Application.app(.DEV)
                 ),
@@ -79,7 +80,8 @@ let targets: [Target] = [
                     name: .PROD,
                     settings: [
                         "SWIFT_ACTIVE_COMPILATION_CONDITIONS": "RELEASE",
-                        "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon"
+                        "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon",
+                        "GCC_PREPROCESSOR_DEFINITIONS": ["FLEXLAYOUT_SWIFT_PACKAGE=1"]
                     ],
                     xcconfig: XCConfig.Application.app(.PROD)
                 )
@@ -106,7 +108,8 @@ let targets: [Target] = [
                 .debug(
                     name: .DEV,
                     settings: [
-                        "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIconDevServer"
+                        "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIconDevServer",
+                        "GCC_PREPROCESSOR_DEFINITIONS": ["FLEXLAYOUT_SWIFT_PACKAGE=1"]
                     ],
                     xcconfig: XCConfig.Application.devApp(.DEV)
                 ),
@@ -114,7 +117,8 @@ let targets: [Target] = [
                     name: .PROD,
                     settings: [
                         "SWIFT_ACTIVE_COMPILATION_CONDITIONS": "RELEASE",
-                        "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon"
+                        "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon",
+                        "GCC_PREPROCESSOR_DEFINITIONS": ["FLEXLAYOUT_SWIFT_PACKAGE=1"]
                     ],
                     xcconfig: XCConfig.Application.devApp(.PROD)
                 )

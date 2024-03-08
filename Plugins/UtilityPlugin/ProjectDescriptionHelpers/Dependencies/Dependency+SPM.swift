@@ -33,8 +33,10 @@ public extension TargetDependency.SwiftPM.Network {
 
 // MARK: - Reactive Target
 public extension TargetDependency.SwiftPM.Reactive {
-    static let RxSwift: TargetDependency = .package(product: "RxSwift")
-    static let RxCocoa: TargetDependency = .package(product: "RxCocoa")
+//    static let RxSwift: TargetDependency = .package(product: "RxSwift")
+//    static let RxCocoa: TargetDependency = .package(product: "RxCocoa")
+    static let RxSwift: TargetDependency = .external(name: "RxSwift")
+    static let RxCocoa: TargetDependency = .external(name: "RxCocoa")
     static let RxGesture: TargetDependency = .package(product: "RxGesture")
     static let ReactorKit: TargetDependency = .package(product: "ReactorKit")
     static let All: [TargetDependency] = [RxSwift, RxCocoa, RxGesture, ReactorKit]
@@ -42,8 +44,10 @@ public extension TargetDependency.SwiftPM.Reactive {
 
 // MARK: - Layout Target
 public extension TargetDependency.SwiftPM.Layout {
-    static let FlexLayout: TargetDependency = .package(product: "FlexLayout")
-    static let PinLayout: TargetDependency = .package(product: "PinLayout")
+//    static let FlexLayout: TargetDependency = .package(product: "FlexLayout")
+//    static let PinLayout: TargetDependency = .package(product: "PinLayout")
+    static let FlexLayout: TargetDependency = .external(name: "FlexLayout")
+    static let PinLayout: TargetDependency = .external(name: "PinLayout")
     static let All: [TargetDependency] = [FlexLayout, PinLayout]
 }
 
@@ -81,15 +85,15 @@ public extension Package.Reactive {
 public extension Package.Layout {
     static let FlexLayout: Package = .package(url: "https://github.com/layoutBox/FlexLayout", .branch("master"))
     static let PinLayout: Package = .package(url: "https://github.com/layoutBox/PinLayout", .branch("master"))
-    static let DropDown: Package = .package(url: "https://github.com/AssistoLab/DropDown", .branch("master"))
-    static let All: [Package] = [FlexLayout, PinLayout, DropDown]
+    static let All: [Package] = [FlexLayout, PinLayout]
 }
 
 // MARK: - UI Package
 public extension Package.UI {
     static let SkeletonView: Package = .package(url: "https://github.com/Juanpe/SkeletonView", .upToNextMajor(from: "1.0.0"))
     static let KingFihser: Package = .package(url: "https://github.com/onevcat/Kingfisher", .upToNextMajor(from: "7.0.0"))
-    static let All: [Package] = [SkeletonView, KingFihser]
+    static let DropDown: Package = .package(url: "https://github.com/AssistoLab/DropDown", .branch("master"))
+    static let All: [Package] = [SkeletonView, KingFihser, DropDown]
 }
 
 // MARK: - Test Package

@@ -4,12 +4,14 @@ import UtilityPlugin
 extension Project {
     public static func staticLibrary(name: String,
                                      destinations: Destinations = .iOS,
+                                     settings: [String: SettingValue] = [:],
                                      packages: [Package] = [],
                                      dependencies: [TargetDependency] = [],
                                      infoPlist: [String: Plist.Value] = [:],
                                      hasDemoApp: Bool = false) -> Self {
         return project(name: name,
                        destinations: destinations,
+                       settings: settings,
                        packages: packages,
                        product: .staticLibrary,
                        dependencies: dependencies,
@@ -19,12 +21,14 @@ extension Project {
     
     public static func staticFramework(name: String,
                                        destinations: Destinations = .iOS,
+                                       settings: [String: SettingValue] = [:],
                                        packages: [Package] = [],
                                        dependencies: [TargetDependency] = [],
                                        infoPlist: [String: Plist.Value] = [:],
                                        hasDemoApp: Bool = false) -> Self {
         return project(name: name,
                        destinations: destinations,
+                       settings: settings,
                        packages: packages,
                        product: .staticFramework,
                        dependencies: dependencies,
@@ -34,12 +38,14 @@ extension Project {
     
     public static func framework(name: String,
                                  destinations: Destinations = .iOS,
+                                 settings: [String: SettingValue] = [:],
                                  packages: [Package] = [],
                                  dependencies: [TargetDependency] = [],
                                  infoPlist: [String: Plist.Value] = [:],
                                  hasDemoApp: Bool = false) -> Self {
         return project(name: name,
                        destinations: destinations,
+                       settings: settings,
                        packages: packages,
                        product: .framework,
                        dependencies: dependencies,
@@ -52,14 +58,16 @@ extension Project {
     public static func project(name: String,
                                destinations: Destinations = .iOS,
                                organizationName: String = "com.junhyeok.TuistMock",
+                               settings: [String: SettingValue] = [:],
                                packages: [Package] = [],
                                product: Product,
                                deploymentTarget: DeploymentTargets? = .iOS("14.0"),
                                dependencies: [TargetDependency] = [],
                                infoPlist: [String: Plist.Value] = [:],
                                hasDemoApp: Bool = false) -> Project {
-        let settings: Settings = .settings(base: ["CODE_SIGN_IDENTITY": "",
-                                                  "CODE_SIGNING_REGUIRED": "NO"],
+        let settingBase: [String: SettingValue] = ["CODE_SIGN_IDENTITY": "",
+                                                   "CODE_SIGNING_REGUIRED": "NO"]
+        let settings: Settings = .settings(base: settingBase.merging(settings),
                                            configurations: [
                                             .debug(name: .DEV,
                                                    settings: [
@@ -71,7 +79,7 @@ extension Project {
                                                    ],
                                                    xcconfig: .relativeToXCConfig(.DEV)
                                                   ),
-                                            .debug(name: .DEV,
+                                            .debug(name: .TEST,
                                                    settings: [
                                                     "GCC_PREPROCESSOR_DEFINITIONS": [
                                                         "DEBUG=1",
@@ -85,7 +93,7 @@ extension Project {
                                                    settings: [
                                                     "GCC_PREPROCESSOR_DEFINITIONS": [
                                                         "RELEASE=1",
-                                                        "OTHER_MACRO=1",
+//                                                        "OTHER_MACRO=1",
                                                         "FLEXLAYOUT_SWIFT_PACKAGE=1"
                                                     ]
                                                    ],
