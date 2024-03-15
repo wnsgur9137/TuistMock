@@ -11,12 +11,12 @@ import UtilityPlugin
 
 let project: Project = .framework(
     name: "UILibraries",
-    settings: [
-        "OTHER_LDFLAGS": [
-            "$(inherited)",
-            "-all_load"
-        ]
-    ],
+//    settings: [
+//        "OTHER_LDFLAGS": [
+//            "$(inherited)",
+//            "-all_load"
+//        ]
+//    ],
     packages: Package.UI.All,
     dependencies: TargetDependency.SwiftPM.UI.All
 )

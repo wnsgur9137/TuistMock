@@ -27,18 +27,22 @@ extension Package {
 
 // MARK: - Network Target
 public extension TargetDependency.SwiftPM.Network {
-    static let Moya: TargetDependency = .package(product: "RxMoya")
-    static let All: [TargetDependency] = [Moya]
+//    static let Moya: TargetDependency = .package(product: "Moya")
+    static let Moya: TargetDependency = .external(name: "RxMoya")
+    static let Alamofire: TargetDependency = .external(name: "Alamofire")
+    static let All: [TargetDependency] = [Moya, Alamofire]
 }
 
 // MARK: - Reactive Target
 public extension TargetDependency.SwiftPM.Reactive {
 //    static let RxSwift: TargetDependency = .package(product: "RxSwift")
 //    static let RxCocoa: TargetDependency = .package(product: "RxCocoa")
+//    static let RxGesture: TargetDependency = .package(product: "RxGesture")
+//    static let ReactorKit: TargetDependency = .package(product: "ReactorKit")
     static let RxSwift: TargetDependency = .external(name: "RxSwift")
     static let RxCocoa: TargetDependency = .external(name: "RxCocoa")
-    static let RxGesture: TargetDependency = .package(product: "RxGesture")
-    static let ReactorKit: TargetDependency = .package(product: "ReactorKit")
+    static let RxGesture: TargetDependency = .external(name: "RxGesture")
+    static let ReactorKit: TargetDependency = .external(name: "ReactorKit")
     static let All: [TargetDependency] = [RxSwift, RxCocoa, RxGesture, ReactorKit]
 }
 
@@ -68,24 +72,27 @@ public extension TargetDependency.SwiftPM.Test {
 
 // MARK: - Network Package
 public extension Package.Network {
-    static let Alamofire: Package = .package(url: "https://github.com/Alamofire/Alamofire", .upToNextMajor(from: "5.0.0"))
-    static let Moya: Package = .package(url: "https://github.com/Moya/Moya", .upToNextMajor(from: "15.0.0"))
-    static let All: [Package] = [Alamofire, Moya]
+//    static let Alamofire: Package = .package(url: "https://github.com/Alamofire/Alamofire", .upToNextMajor(from: "5.0.0"))
+//    static let Moya: Package = .package(url: "https://github.com/Moya/Moya", .upToNextMajor(from: "15.0.0"))
+//    static let All: [Package] = [Alamofire, Moya]
+    static let All: [Package] = []
 }
 
 // MARK: - Reative Package
 public extension Package.Reactive {
-    static let RxSwift: Package = .package(url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "6.0.0"))
-    static let RxGesture: Package = .package(url: "https://github.com/RxSwiftCommunity/RxGesture", .upToNextMajor(from: "4.0.0"))
-    static let ReactorKit: Package = .package(url: "https://github.com/ReactorKit/ReactorKit", .upToNextMajor(from: "3.0.0"))
-    static let All: [Package] = [RxSwift, RxGesture, ReactorKit]
+//    static let RxSwift: Package = .package(url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "6.0.0"))
+//    static let RxGesture: Package = .package(url: "https://github.com/RxSwiftCommunity/RxGesture", .upToNextMajor(from: "4.0.0"))
+//    static let ReactorKit: Package = .package(url: "https://github.com/ReactorKit/ReactorKit", .upToNextMajor(from: "3.0.0"))
+//    static let All: [Package] = [RxSwift, RxGesture, ReactorKit]
+    static let All: [Package] = []
 }
 
 // MARK: - Layout Package
 public extension Package.Layout {
-    static let FlexLayout: Package = .package(url: "https://github.com/layoutBox/FlexLayout", .branch("master"))
-    static let PinLayout: Package = .package(url: "https://github.com/layoutBox/PinLayout", .branch("master"))
-    static let All: [Package] = [FlexLayout, PinLayout]
+//    static let FlexLayout: Package = .package(url: "https://github.com/layoutBox/FlexLayout", .branch("master"))
+//    static let PinLayout: Package = .package(url: "https://github.com/layoutBox/PinLayout", .branch("master"))
+//    static let All: [Package] = [FlexLayout, PinLayout]
+    static let All: [Package] = []
 }
 
 // MARK: - UI Package

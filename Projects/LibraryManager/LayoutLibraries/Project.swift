@@ -11,12 +11,16 @@ import UtilityPlugin
 
 let project: Project = .framework(
     name: "LayoutLibraries",
-    settings: [
-        "OTHER_LDFLAGS": [
-            "$(inherited)",
-            "-all_load"
-        ]
-    ],
-    packages: Package.Layout.All,
-    dependencies: TargetDependency.SwiftPM.Layout.All
+//    settings: [
+//        "OTHER_LDFLAGS": [
+//            "$(inherited)",
+//            "-all_load"
+//        ]
+//    ],
+//    packages: Package.Layout.All,
+//    dependencies: TargetDependency.SwiftPM.Layout.All
+    dependencies: [
+        TargetDependency.Carthage.FlexLayout,
+        TargetDependency.Carthage.PinLayout
+    ]
 )
