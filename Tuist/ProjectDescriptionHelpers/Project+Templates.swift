@@ -1,158 +1,193 @@
 import ProjectDescription
-
-/// Project helpers are functions that simplify the way you define your project.
-/// Share code to create targets, settings, dependencies,
-/// Create your own conventions, e.g: a func that makes sure all shared targets are "static frameworks"
-/// See https://docs.tuist.io/guides/helpers/
+import UtilityPlugin
 
 extension Project {
+    public static func staticLibrary(name: String,
+                                     destinations: Destinations = .iOS,
+                                     settings: [String: SettingValue] = [:],
+                                     packages: [Package] = [],
+                                     dependencies: [TargetDependency] = [],
+                                     infoPlist: [String: Plist.Value] = [:],
+                                     hasDemoApp: Bool = false) -> Self {
+        return project(name: name,
+                       destinations: destinations,
+                       settings: settings,
+                       packages: packages,
+                       product: .staticLibrary,
+                       dependencies: dependencies,
+                       infoPlist: infoPlist,
+                       hasDemoApp: hasDemoApp)
+    }
     
-    /// 기본 InfoPlist
-    public static let defaultInfoPlist: [String: Plist.Value] = [
-        "CFBundleShortVersionString": "1.0.0",
-        "CFBundleVersion": "1"
-    ]
+    public static func staticFramework(name: String,
+                                       destinations: Destinations = .iOS,
+                                       settings: [String: SettingValue] = [:],
+                                       packages: [Package] = [],
+                                       dependencies: [TargetDependency] = [],
+                                       infoPlist: [String: Plist.Value] = [:],
+                                       hasDemoApp: Bool = false) -> Self {
+        return project(name: name,
+                       destinations: destinations,
+                       settings: settings,
+                       packages: packages,
+                       product: .staticFramework,
+                       dependencies: dependencies,
+                       infoPlist: infoPlist,
+                       hasDemoApp: hasDemoApp)
+    }
     
-    
-    /// Projects 생성
-    /// - Parameters:
-    ///   - name: 프로젝트 이름
-    ///   - destinations: 플랫폼
-    ///   - infoPlist: Info.plist
-    ///   - additionalTargets: additionalTargets
-    ///   - buildAction: 빌드시 실행할 액션
-    /// - Returns: [Project]
-    public static func makeProject(name: String,
-                                   destinations: Destinations = Destinations(arrayLiteral: .iPhone, .iPad),
-                                   infoPlist: [String: Plist.Value] = Project.defaultInfoPlist,
-                                   additionalTargets: [String] = [],
-                                   buildAction: BuildAction = BuildAction(targets: [])) -> Project {
-        // Organization 이름
-        let organizationName: String = "JunHyeok"
+    public static func framework(name: String,
+                                 destinations: Destinations = .iOS,
+                                 settings: [String: SettingValue] = [:],
+                                 packages: [Package] = [],
+                                 dependencies: [TargetDependency] = [],
+                                 infoPlist: [String: Plist.Value] = [:],
+                                 hasDemoApp: Bool = false) -> Self {
+        return project(name: name,
+                       destinations: destinations,
+                       settings: settings,
+                       packages: packages,
+                       product: .framework,
+                       dependencies: dependencies,
+                       infoPlist: infoPlist,
+                       hasDemoApp: hasDemoApp)
+    }
+}
+
+extension Project {
+    public static func project(name: String,
+                               destinations: Destinations = .iOS,
+                               organizationName: String = "com.junhyeok.TuistMock",
+                               settings: [String: SettingValue] = [:],
+                               packages: [Package] = [],
+                               product: Product,
+                               deploymentTarget: DeploymentTargets? = .iOS("14.0"),
+                               dependencies: [TargetDependency] = [],
+                               infoPlist: [String: Plist.Value] = [:],
+                               hasDemoApp: Bool = false) -> Project {
+        let settingBase: [String: SettingValue] = ["CODE_SIGN_IDENTITY": "",
+                                                   "CODE_SIGNING_REGUIRED": "NO"]
+        let settings: Settings = .settings(base: settingBase.merging(settings),
+                                           configurations: [
+                                            .debug(name: .DEV,
+                                                   settings: [
+                                                    "GCC_PREPROCESSOR_DEFINITIONS": [
+                                                        "DEBUG=1",
+                                                        "OTHER_MACRO=1",
+                                                        "FLEXLAYOUT_SWIFT_PACKAGE=1"
+                                                    ]
+                                                   ],
+                                                   xcconfig: .relativeToXCConfig(.DEV)
+                                                  ),
+                                            .debug(name: .TEST,
+                                                   settings: [
+                                                    "GCC_PREPROCESSOR_DEFINITIONS": [
+                                                        "DEBUG=1",
+                                                        "OTHER_MACRO=1",
+                                                        "FLEXLAYOUT_SWIFT_PACKAGE=1"
+                                                    ]
+                                                   ],
+                                                   xcconfig: .relativeToXCConfig(.TEST)
+                                                  ),
+                                            .release(name: .PROD,
+                                                   settings: [
+                                                    "GCC_PREPROCESSOR_DEFINITIONS": [
+                                                        "RELEASE=1",
+//                                                        "OTHER_MACRO=1",
+                                                        "FLEXLAYOUT_SWIFT_PACKAGE=1"
+                                                    ]
+                                                   ],
+                                                   xcconfig: .relativeToXCConfig(.PROD)
+                                                  ),
+                                           ])
+        let target = Target(name: name,
+                            destinations: destinations,
+                            product: product,
+                            productName: name,
+                            bundleId: "com.junhyeok.\(name)",
+                            deploymentTargets: deploymentTarget,
+                            infoPlist: .extendingDefault(with: infoPlist),
+                            sources: ["Sources/**"],
+                            resources: ["Resources/**"],
+                            dependencies: dependencies)
         
-        // 프로젝트 번들아이디
-        let bundleID: String = "com.junhyeok.TuistMock"
+        let demoAppTarget = Target(name: "\(name)DemoApp",
+                                   destinations: destinations,
+                                   product: .app,
+                                   productName: name,
+                                   bundleId: "com.junhyeok.\(name)DemoApp",
+                                   deploymentTargets: deploymentTarget,
+                                   infoPlist: .extendingDefault(with: [
+                                    "UILaunchStoryboardName": "LaunchScreen"
+                                   ]),
+                                   sources: ["Demo/**"],
+                                   resources: ["Demo/Resources/**"],
+                                   dependencies: [
+                                    .target(name: "\(name)")
+                                   ])
         
-        // 배포타겟
-        let deploymentTarget: DeploymentTargets = .iOS("13.0")
+        let testTargetDependencies: [TargetDependency] = hasDemoApp ? [.target(name: "\(name)DemoApp")] : [.target(name: "\(name)")]
         
-        // .xcconfig 파일들
-        let configurations: [Configuration] = [
-            .debug(name: "DEBUG", xcconfig: .relativeToRoot("Configurations/TuistMock-Debug.xcconfig")),
-            .release(name: "RELEASE", xcconfig: .relativeToRoot("Configurations/TuistMock-Release.xcconfig"))
-        ]
+        let testTarget = Target(name: "\(name)Tests",
+                                destinations: destinations,
+                                product: .unitTests,
+                                bundleId: "com.junhyeok.\(name)Tests",
+                                deploymentTargets: deploymentTarget,
+                                infoPlist: .default,
+                                sources: "Tests/**",
+                                dependencies: testTargetDependencies)
         
-        // Swift Package
-        let packages: [Package] = [
-            
-        ]
+        let schemes: [Scheme] = hasDemoApp
+        ? [.makeScheme(target: .DEV, name: name), .makeDemoScheme(target: .DEV, name: name)]
+        : [.makeScheme(target: .DEV, name: name)]
         
-        // Project Target
-        var targets: [Target] = makeTargets(name: name,
-                                            destinations: destinations,
-                                            bundleID: bundleID,
-                                            infoPlist: infoPlist,
-                                            dependencies: additionalTargets.map { TargetDependency.target(name: $0) },
-                                            settings: .settings(configurations: configurations))
+        let targets: [Target] = hasDemoApp
+        ? [target, testTarget, demoAppTarget]
+        : [target, testTarget]
         
-        // Schemes
-        let schemes: [Scheme] = makeSchemes(name: name,
-                                            buildAction: buildAction)
-        
-        // Project
         return Project(name: name,
                        organizationName: organizationName,
-                       settings: .settings(configurations: configurations),
+                       packages: packages,
+                       settings: settings,
                        targets: targets,
                        schemes: schemes)
     }
-    
-    // MARK: - Private
-    
-    
-    /// Targets 생성
-    /// - Parameters:
-    ///   - name: 타겟 이름
-    ///   - destinations: 플랫폼
-    ///   - bundleID: 타겟 번들아이디
-    ///   - infoPlist: Info.plist
-    ///   - dependencies: 의존성 (타겟의 의존성과 테스트의 의존성은 다름)
-    ///   - settings: 프로젝트의 Configuration
-    /// - Returns: [Target]
-    private static func makeTargets(name: String,
-                                    destinations: Destinations,
-                                    bundleID: String,
-                                    infoPlist: [String: Plist.Value],
-                                    dependencies: [TargetDependency],
-                                    settings: Settings) -> [Target] {
-        
-        let mainTarget = Target(name: name, // 타겟 이름
-                                destinations: destinations,
-                                product: .app,
-                                bundleId: bundleID,
-                                sources: ["Sources/**"],
-                                resources: ["Resources/**"],
-                                dependencies: dependencies,
-                                settings: settings)
-        
-        let unitTestTarget = Target(name: "\(name)UnitTest",
-                                    destinations: destinations,
-                                    product: .unitTests,
-                                    bundleId: bundleID,
-                                    sources: ["UnitTests/**"],
-                                    resources: ["Resources/**"],
-                                    dependencies: [.target(name: "\(name)")])
-        
-        let uiTestTarget = Target(name: "\(name)UITests",
-                                destinations: destinations,
-                                product: .uiTests,
-                                bundleId: bundleID,
-                                sources: ["UITests/**"],
-                                resources: ["Resources/**"],
-                                dependencies: [.target(name: "\(name)")])
-        
-        return [mainTarget, unitTestTarget, uiTestTarget]
+}
+
+extension Scheme {
+    static func makeScheme(target: AppConfiguration, name: String) -> Self {
+        return Scheme(
+            name: "\(name)",
+            shared: true,
+            buildAction: .buildAction(targets: ["\(name)"]),
+            testAction: .targets(
+                ["\(name)Tests"],
+                arguments: nil,
+                configuration: target.configurationName,
+                options: .options(coverage: true)
+            ),
+            runAction: .runAction(configuration: target.configurationName),
+            archiveAction: .archiveAction(configuration: target.configurationName),
+            profileAction: .profileAction(configuration: target.configurationName),
+            analyzeAction: .analyzeAction(configuration: target.configurationName)
+        )
     }
     
-    
-    /// Schemes 생성
-    /// - Parameters:
-    ///   - name: 스키마 이름 "{name}-{schmeName}"
-    ///   - buildAction: 빌드시 실행할 액션
-    /// - Returns: [Scheme]
-    private static func makeSchemes(name: String,
-                                    buildAction: BuildAction) -> [Scheme] {
-        
-        let debugScheme = Scheme(name: "\(name)-Debug",
-                                 shared: true,
-                                 buildAction: buildAction)
-        
-        let releaseScheme = Scheme(name: "\(name)-Release",
-                                   shared: true,
-                                   buildAction: buildAction)
-        
-        return [debugScheme, releaseScheme]
-    }
-    
-    
-    /// Framework Targets 생성
-    /// - Parameters:
-    ///   - name: 프레임워크 이름
-    ///   - destinations: 플랫폼
-    ///   - infoPlist: Info.plist
-    ///   - dependencies: 의존성
-    ///   - settings: 프로젝트의 Configuration
-    /// - Returns: [Target]
-    private static func makeFrameworkTargets(name: String,
-                                             destinations: Destinations,
-                                             infoPlist: [String: Plist.Value],
-                                             dependencies: [TargetDependency],
-                                             settings: Settings) -> [Target] {
-        return makeTargets(name: name,
-                           destinations: destinations,
-                           bundleID: "com.junhyeok.\(name)Framework",
-                           infoPlist: infoPlist,
-                           dependencies: dependencies,
-                           settings: settings)
+    static func makeDemoScheme(target: AppConfiguration, name: String) -> Self {
+        return Scheme(
+            name: "\(name)DemoApp",
+            shared: true,
+            buildAction: .buildAction(targets: ["\(name)DemoApp"]),
+            testAction: .targets(
+                ["\(name)Tests"],
+                arguments: nil,
+                configuration: target.configurationName,
+                options: .options(coverage: true)
+            ),
+            runAction: .runAction(configuration: target.configurationName),
+            archiveAction: .archiveAction(configuration: target.configurationName),
+            profileAction: .profileAction(configuration: target.configurationName),
+            analyzeAction: .analyzeAction(configuration: target.configurationName)
+        )
     }
 }
