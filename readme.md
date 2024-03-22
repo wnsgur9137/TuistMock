@@ -1,1 +1,3 @@
-.gitignore 수정 필요
+## Tuist 4.6.0
+
+![graph](graph.png)
